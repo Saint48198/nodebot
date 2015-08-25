@@ -13,13 +13,11 @@ board.on("ready", function() {
     motor1 = new five.Motor(configs.M1);
     motor2 = new five.Motor(configs.M4);
 
-    // wiring issue with sensor
     //// Create a new `ping` hardware instance.
-    //var ping = new five.Ping(15);
-    //
-    //ping.on("change", function() {
-    //    console.log("Object is " + this.in + " inches away");
-    //});
+    var ping = new five.Ping(15);
+    ping.on("change", function() {
+        console.log("Object is " + this.in + " inches away");
+    });
 
     console.log("Use the cursor keys or ASWD to move your bot. Hit escape or the spacebar to stop.");
 
